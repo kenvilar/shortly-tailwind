@@ -25,12 +25,16 @@ const Shorten = () => {
         e.target[0].classList.add("border-red");
       }
     } else if (!validURL(e.target[0].value)) {
-      errMsg.innerHTML = "Please enter a valid URL";
-      e.target[0].classList.add("border-red");
+      if (errMsg) {
+        errMsg.innerHTML = "Please enter a valid URL";
+        e.target[0].classList.add("border-red");
+      }
     } else {
-      errMsg.innerHTML = "";
-      e.target[0].classList.remove("border-red");
-      alert("Success");
+      if (errMsg) {
+        errMsg.innerHTML = "";
+        e.target[0].classList.remove("border-red");
+        alert("Success");
+      }
     }
   };
 
