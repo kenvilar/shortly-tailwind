@@ -1,8 +1,19 @@
+"use client";
 import Image from "next/image";
 import Logo from "@/app/images/logo.svg";
 
 const Nav = () => {
   const menuItems = ["Features", "Pricing", "Resources"];
+
+  const clickHamburger = () => {
+    const menu = document.getElementById("menu");
+    const btn = document.getElementById("menu-btn");
+    if (menu) {
+      btn.classList.toggle("open");
+      menu.classList.toggle("flex");
+      menu.classList.toggle("hidden");
+    }
+  };
 
   return (
     <>
@@ -41,6 +52,7 @@ const Nav = () => {
             id="menu-btn"
             className="block hamburger lg:hidden focus:outline-none"
             type="button"
+            onClick={clickHamburger}
           >
             {["top", "middle", "bottom"].map((item, idx) => {
               return <span key={idx} className={`hamburger-${item}`} />;
