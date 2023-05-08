@@ -24,7 +24,27 @@ const Shorten = () => {
         errMsg.innerHTML = "Please enter something";
         e.target[0].classList.add("border-red");
       }
+    } else if (!validURL(e.target[0].value)) {
+      errMsg.innerHTML = "Please enter a valid URL";
+      e.target[0].classList.add("border-red");
+    } else {
+      errMsg.innerHTML = "";
+      e.target[0].classList.remove("border-red");
+      alert("Success");
     }
+  };
+
+  const validURL = (str) => {
+    let pattern = new RegExp(
+      "^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
+        "((\\d{1,3}\\.){3}\\d{1,3}))" +
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" +
+        "(\\?[;&a-z\\d%_.~+=-]*)?" +
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    );
+    return pattern.test(str);
   };
 
   return (
