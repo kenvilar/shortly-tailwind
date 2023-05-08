@@ -38,11 +38,44 @@ const Nav = () => {
           </div>
 
           {/*todo hamburger*/}
-          <button id="menu-btn"></button>
+          <button
+            id="menu-btn"
+            className="block hamburger lg:hidden focus:outline-none"
+            type="button"
+          >
+            {["top", "middle", "bottom"].map((item, idx) => {
+              return <span key={idx} className={`hamburger-${item}`} />;
+            })}
+          </button>
         </div>
 
         {/*todo mobile menu*/}
-        <div id="menu"></div>
+        <div
+          id="menu"
+          className="absolute hidden p-6 rounded-lg bg-darkViolet left-6 right-6 top-20 z-100"
+        >
+          <div className="flex flex-col items-center justify-center w-full space-y-6 font-bold text-white rounded-sm">
+            {menuItems.map((item, idx) => {
+              return (
+                <a key={idx} href="#" className="w-full text-center">
+                  {item}
+                </a>
+              );
+            })}
+            <a
+              href="#"
+              className="w-full pt-6 border-t border-gray-400 text-center"
+            >
+              Login
+            </a>
+            <a
+              href="#"
+              className="w-full py-3 text-center rounded-full bg-cyan"
+            >
+              Sign Up
+            </a>
+          </div>
+        </div>
       </nav>
     </>
   );
