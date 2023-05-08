@@ -80,18 +80,13 @@ const Footer = () => {
           </div>
 
           <div className="flex space-x-6">
-            <a href="#">
-              {socialItems.map((item, idx) => {
-                return (
-                  <Image
-                    key={idx}
-                    src={item}
-                    alt="social icon"
-                    className="ficon"
-                  />
-                );
-              })}
-            </a>
+            {socialItems.map((item, idx) => {
+              return (
+                <a key={idx} href="#">
+                  <Image src={item} alt="social icon" className="ficon" />
+                </a>
+              );
+            })}
           </div>
         </div>
       </footer>
