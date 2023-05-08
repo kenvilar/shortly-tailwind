@@ -1,3 +1,4 @@
+"use client";
 const Shorten = () => {
   const linkItems = [
     {
@@ -14,11 +15,24 @@ const Shorten = () => {
     },
   ];
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const errMsg = document.getElementById("error-msg");
+
+    if (e.target[0].value === "") {
+      if (errMsg) {
+        errMsg.innerHTML = "Please enter something";
+        e.target[0].classList.add("border-red");
+      }
+    }
+  };
+
   return (
     <>
       <section id="shorten" className="relative bg-gray-100">
         <div className="max-w-4xl mx-auto p-6 space-y-6">
           <form
+            onSubmit={onSubmit}
             id="link-form"
             action=""
             className="relative flex flex-col w-full p-10 -mt-20 space-y-4 bg-darkViolet rounded-lg md:flex-row md:space-y-0 md:space-x-3"
@@ -31,7 +45,7 @@ const Shorten = () => {
             />
 
             <button
-              type="button"
+              type="submit"
               className="px-10 py-3 text-white bg-cyan rounded-lg hover:bg-cyanLight focus:outline-none md:py-2"
             >
               Shorten It!
