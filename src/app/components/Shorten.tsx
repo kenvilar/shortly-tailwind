@@ -35,6 +35,9 @@ const Shorten = () => {
             >
               Shorten It!
             </button>
+
+            {/*Error message*/}
+            <div className="absolute left-7 bottom-3 text-red text-sm italic" />
           </form>
 
           {/*Link 1*/}
