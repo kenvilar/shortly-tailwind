@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Logo from "@/app/images/logo.svg";
+import Facebook from "@/app/images/icon-facebook.svg";
+import Twitter from "@/app/images/icon-twitter.svg";
+import Pinterest from "@/app/images/icon-pinterest.svg";
+import Instagram from "@/app/images/icon-instagram.svg";
 
 const Footer = () => {
   const featuresMenu = ["Link shortening", "Branded links", "Analytics"];
   const resourcesMenu = ["Blog", "Developers", "Support"];
   const companyMenu = ["About", "Our Team", "Careers", "Contact"];
+  const socialItems = [Facebook, Twitter, Pinterest, Instagram];
 
   return (
     <>
@@ -72,6 +77,21 @@ const Footer = () => {
                 })}
               </div>
             </div>
+          </div>
+
+          <div className="flex space-x-6">
+            <a href="#">
+              {socialItems.map((item, idx) => {
+                return (
+                  <Image
+                    key={idx}
+                    src={item}
+                    alt="social icon"
+                    className="ficon"
+                  />
+                );
+              })}
+            </a>
           </div>
         </div>
       </footer>
