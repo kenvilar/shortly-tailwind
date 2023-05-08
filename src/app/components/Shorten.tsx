@@ -15,7 +15,7 @@ const Shorten = () => {
     },
   ];
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
     const errMsg = document.getElementById("error-msg");
 
