@@ -42,7 +42,7 @@ const Shorten = () => {
             return (
               <div
                 key={idx}
-                className="flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
+                className="group flex flex-col items-center justify-between w-full p-6 bg-white rounded-lg md:flex-row"
               >
                 <p className="font-bold text-center text-veryDarkViolet md:text-left">
                   {item.link}
@@ -52,7 +52,7 @@ const Shorten = () => {
                   <div className="font-bold text-cyan">{item.shortenLink}</div>
                   <button
                     type="button"
-                    className="p-2 px-8 text-white bg-cyan rounded-lg hover:opacity-70 focus:outline-none"
+                    className="p-2 px-8 text-white group-odd:bg-darkViolet group-even:bg-cyan rounded-lg hover:opacity-70 focus:outline-none"
                   >
                     Copy
                   </button>
