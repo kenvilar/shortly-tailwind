@@ -4,6 +4,7 @@ import Shorten from "@/app/components/Shorten";
 import Stats from "@/app/components/Stats";
 import Features from "@/app/components/Features";
 import CTA from "@/app/components/CTA";
+import Footer from "@/app/components/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       <Features />
 
       <CTA />
+
+      <Footer />
     </>
   );
 }
