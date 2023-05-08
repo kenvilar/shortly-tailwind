@@ -9,7 +9,9 @@ const Nav = () => {
     const menu = document.getElementById("menu");
     const btn = document.getElementById("menu-btn");
     if (menu) {
-      btn.classList.toggle("open");
+      if (btn) {
+        btn.classList.toggle("open");
+      }
       menu.classList.toggle("flex");
       menu.classList.toggle("hidden");
     }
