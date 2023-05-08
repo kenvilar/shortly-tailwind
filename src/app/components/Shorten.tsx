@@ -38,7 +38,7 @@ const Shorten = () => {
     }
   };
 
-  const validURL = (str) => {
+  const validURL = (str: string) => {
     let pattern = new RegExp(
       "^(https?:\\/\\/)?" + // protocol
         "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" +
