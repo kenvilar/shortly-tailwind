@@ -27,6 +27,7 @@ const Shorten = () => {
               type="text"
               className="flex-1 p-3 border-2 rounded-lg placeholder-yellow-500 focus:outline-none"
               placeholder="Shorten a link here"
+              id="link-input"
             />
 
             <button
@@ -37,7 +38,10 @@ const Shorten = () => {
             </button>
 
             {/*Error message*/}
-            <div className="absolute left-7 bottom-3 text-red text-sm italic" />
+            <div
+              id="error-msg"
+              className="absolute left-7 bottom-3 text-red text-sm italic"
+            />
           </form>
 
           {/*Link 1*/}
